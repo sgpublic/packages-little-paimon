@@ -7,11 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=colorama045
+PKG_NAME_BASE:=colorama
+PKG_NAME:=$(PKG_NAME_BASE)-0.4.5
 PKG_VERSION:=0.4.5
 PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME)
+PYPI_NAME:=$(PKG_NAME_BASE)
 PKG_HASH:=e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4
 
 PKG_MAINTAINER:=tartley
@@ -26,7 +27,7 @@ define Package/python3-$(PKG_NAME)
   SECTION:=lang
   CATEGORY:=Languages
   SUBMENU:=Python
-  TITLE:=python3-$(PKG_NAME)
+  TITLE:=python3-$(PKG_NAME_BASE)-0.4.5
   URL:=https://github.com/tartley/colorama
   DEPENDS:=+python3
 endef

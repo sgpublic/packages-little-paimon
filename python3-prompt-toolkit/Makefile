@@ -11,7 +11,7 @@ PKG_NAME:=prompt-toolkit
 PKG_VERSION:=3.0.30
 PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME)
+PYPI_NAME:=prompt_toolkit
 PKG_HASH:=859b283c50bde45f5f97829f77a4674d1c1fcd88539364f1b28a37805cfd89c0
 
 PKG_MAINTAINER:=prompt-toolkit
@@ -28,7 +28,7 @@ define Package/python3-$(PKG_NAME)
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
   URL:=https://github.com/prompt-toolkit/python-prompt-toolkit
-	DEPENDS:=+python3 +python3-wcwidt
+	DEPENDS:=+python3 +python3-wcwidth
 endef
 
 define Package/python3-$(PKG_NAME)/description

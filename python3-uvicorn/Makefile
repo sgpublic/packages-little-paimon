@@ -28,7 +28,7 @@ define Package/python3-$(PKG_NAME)
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
   URL:=https://github.com/encode/uvicorn
-	DEPENDS:=+python3 +python3-asgire +python3-click +python3-h11
+	DEPENDS:=+python3 +python3-asgiref +python3-click +python3-h11
 endef
 
 define Package/python3-$(PKG_NAME)/description

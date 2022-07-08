@@ -28,9 +28,9 @@ define Package/python3-$(PKG_NAME)
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
   URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
+	DEPENDS:=+python3-click +python3-colorama-0.4.5 +python3-cookiecutter \
 	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+		+python3-wcwidth
 endef
 
 define Package/python3-$(PKG_NAME)/description
