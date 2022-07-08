@@ -7,14 +7,14 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=fastapi
+PKG_VERSION:=0.78.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=3233d4a789ba018578658e2af1a4bb5e38bdd122ff722b313666a9b2c6786a83
 
-PKG_MAINTAINER:=nonebot
+PKG_MAINTAINER:=tiangolo
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
@@ -27,14 +27,13 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/tiangolo/fastapi
+	DEPENDS:=+python3 +python3-pydantic +python3-starlette
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+FastAPI is a modern, fast (high-performance), web framework for building APIs
+with Python 3.6+ based on standard Python type hints.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

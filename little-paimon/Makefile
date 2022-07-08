@@ -20,7 +20,8 @@ define Package/$(PKG_NAME)
   SUBMENU:=Tencent
   TITLE:=little-paimon
   URL:=https://github.com/CMHopeSunshine/LittlePaimon
-	DEPENDS:=+python3-nb-cli +go-cqhttp +git-http +ffmpeg
+	DEPENDS:=+python3-nb-cli +go-cqhttp +git-http +ffmpeg \
+	  +python3-nonebot-plugin-gocqhttp
 endef
 
 define Package/$(PKG_NAME)/description

@@ -7,16 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=rfc3986
+PKG_VERSION:=1.5.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=270aaf10d87d0d4e095063c65bf3ddbc6ee3d0b226328ce21e036f946e421835
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=python-hyper
+PKG_LICENSE:=Apache-2.0
+PKG_LICENSE_FILES:=LICENSE.APACHE2
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -27,14 +27,12 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/python-hyper/rfc3986/
+	DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+A Python implementation of RFC 3986 including validation and authority parsing.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

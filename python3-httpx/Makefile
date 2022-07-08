@@ -7,16 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=httpx
+PKG_VERSION:=0.23.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=f28eac771ec9eb4866d3fb4ab65abd42d38c424739e80c08d8d20570de60b0ef
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=encode
+PKG_LICENSE:=BSD-3-Clause
+PKG_LICENSE_FILES:=LICENSE.rst
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -27,14 +27,14 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/encode/httpx
+	DEPENDS:=+python3 +python3-certifi +python3-httpcore +python3-rfc3986 +python3-sniffio
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+  HTTPX is a fully featured HTTP client library for Python 3. It includes an
+	integrated command line client, has support for both HTTP/1.1 and HTTP/2, and
+	provides both sync and async APIs.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

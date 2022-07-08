@@ -15,10 +15,6 @@
 
 ## /etc/init.d/paimon 指令
 
-### install
-
-此指令将 `cd` 至 `nb` 项目目录，安装插件 `nonebot-plugin-gocqhttp`，**请在第一次启动前运行此指令！**
-
 ### start
 
 此指令将使用 `nb start` 启动 `little-paimon`，启动前你需要启动 `go-cqhttp`。
@@ -26,8 +22,3 @@
 ### stop
 
 此指令将直接杀死 `nb` 进程以关闭 `little-paimon`。
-
-### update
-
-此指令将 `cd` 至 `LittlePaimon` plugin 目录，使用 `git pull` 更新。
-

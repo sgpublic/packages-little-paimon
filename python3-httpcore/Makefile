@@ -7,16 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=httpcore
+PKG_VERSION:=0.15.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=18b68ab86a3ccf3e7dc0f43598eaddcf472b602aba29f9aa6ab85fe2ada3980b
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=encode
+PKG_LICENSE:=BSD-3-Clause
+PKG_LICENSE_FILES:=LICENSE.rst
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -24,17 +24,16 @@ include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-$(PKG_NAME)
   SECTION:=lang
-  CATEGORY:=Languages
+  CATEGORY:=Language
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/encode/httpcore
+	DEPENDS:=+python3 +python3-anyio +python3-certifi +python3-h11 +python3-sniffio
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+  The HTTP Core package provides a minimal low-level HTTP client, which does one
+	thing only. Sending HTTP requests.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

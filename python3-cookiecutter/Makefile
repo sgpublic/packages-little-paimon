@@ -7,16 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=cookiecutter
+PKG_VERSION:=1.7.3
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=f3982be8d9c53dac1261864013fdec7f83afd2e42ede6f6dd069c5e149c540d5
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
-PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=cookiecutter
+PKG_LICENSE:=BSD-3-Clause
+PKG_LICENSE_FILES:=LICENSE.rst
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
@@ -24,17 +24,18 @@ include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-$(PKG_NAME)
   SECTION:=lang
-  CATEGORY:=Languages
+  CATEGORY:=Language
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/cookiecutter/cookiecutter
+	DEPENDS:=+python3 +python3-binaryornot +python3-click +python3-jinja2 \
+	 +python3-jinja2-time +python3-poyo +python3-slugify +python3-requests \
+	 +python3-six
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+  A command-line utility that creates projects from cookiecutters (project templates), e.g.
+	creating a Python package project from a Python package project template.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

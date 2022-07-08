@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=nonebot-adapter-onebot
+PKG_VERSION:=2.1.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=d00036883dd8b8685f0eea68b7ada9c3b1ba9de8b39f5c33e81d36a444afe02a
 
 PKG_MAINTAINER:=nonebot
 PKG_LICENSE:=MIT
@@ -27,14 +27,12 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/nonebot/adapter-onebot
+	DEPENDS:=+python3-msgpack +python3-nonebot2
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+A plugin to run go-cqhttp directly in NoneBot2, without additional download and installation.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

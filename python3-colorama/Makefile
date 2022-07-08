@@ -7,15 +7,15 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=colorama045
+PKG_VERSION:=0.4.5
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
+PKG_MAINTAINER:=tartley
+PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
@@ -27,14 +27,13 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/tartley/colorama
+  DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+Makes ANSI escape character sequences
+(for producing colored terminal text and cursor positioning) work under MS Windows.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

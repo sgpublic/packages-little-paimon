@@ -7,14 +7,14 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=py-cpuinfo
+PKG_VERSION:=8.0.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=5f269be0e08e33fd959de96b34cd4aeeeacac014dd8305f70eb28d06de2345c5
 
-PKG_MAINTAINER:=nonebot
+PKG_MAINTAINER:=workhorsy
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
@@ -27,14 +27,14 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/workhorsy/py-cpuinfo
+	DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+Py-cpuinfo gets CPU info with pure Python. Py-cpuinfo should work without any
+extra programs or libraries, beyond what your OS provides. It does not require
+any compilation(C/C++, assembly, et cetera) to use. It works with Python 2 and 3.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

@@ -7,15 +7,15 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=arrow
+PKG_VERSION:=1.2.2
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=05caf1fd3d9a11a1135b2b6f09887421153b94558e5ef4d090b567b47173ac2b
 
-PKG_MAINTAINER:=nonebot
-PKG_LICENSE:=MIT
+PKG_MAINTAINER:=arrow-py
+PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
@@ -27,14 +27,17 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/arrow-py/arrow
+	DEPENDS:=+python3 +python3-dateutil
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+  Arrow is a Python library that offers a sensible and human-friendly
+	approach to creating, manipulating, formatting and converting dates,
+	times and timestamps. It implements and updates the datetime type,
+	plugging gaps in functionality and providing an intelligent module API
+	that supports many common creation scenarios. Simply put, it helps you
+	work with dates and times with fewer imports and a lot less code.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

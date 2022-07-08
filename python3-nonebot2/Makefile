@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nb-cli
-PKG_VERSION:=0.6.7
+PKG_NAME:=nonebot2
+PKG_VERSION:=2.0.0b4
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=394bf65eabbda6aa7c410961b901e9f7320fae12143818b1c078fc43f060fa0e
+PKG_HASH:=fe57242138b3ab7019770566c23f7b39c53e0159b81ec7bd5b34cf6b1ff9eb13
 
 PKG_MAINTAINER:=nonebot
 PKG_LICENSE:=MIT
@@ -27,14 +27,16 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/nonebot/nb-cli
-	DEPENDS:=+python3-click +python3-colorama045 +python3-cookiecutter \
-	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+wcwidth
+  URL:=https://github.com/nonebot/nonebot2
+	DEPENDS:=+python3 +python3-fastapi +python3-loguru +python3-pydantic \
+	  +python3-pygtrie +python3-tomlkit +python3-typing-extensions \
+		+python3-uvicorn +python3-yarl
 endef
 
 define Package/python3-$(PKG_NAME)/description
-  Command Line Tools for NoneBot2.
+NoneBot2 is a modern, cross-platform, and extensible Python chatbot framework.
+It is based on Python's type annotations and asynchronous features, and can
+provide convenient and flexible support for your needs.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))
