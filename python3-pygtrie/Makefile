@@ -28,7 +28,7 @@ define Package/python3-$(PKG_NAME)
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
   URL:=https://github.com/mina86/pygtrie
-	DEPENDS:=+python3
+	DEPENDS:=+python3 +python3-pip
 endef
 
 define Package/python3-$(PKG_NAME)/description
