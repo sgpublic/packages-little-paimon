@@ -7,15 +7,15 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nonebot-plugin-gocqhttp
-PKG_VERSION:=0.5.5
+PKG_NAME:=tqdm
+PKG_VERSION:=4.64.0
 PKG_RELEASE:=1
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=b6160d44dba6cfd0f47219cfb4bb9c08664fef5c3d776132ccada98c2616f84f
+PKG_HASH:=40be55d30e200777a307a7585aee69e4eabb46b4ec6a4b4a5f2d9f11e7d5408d
 
-PKG_MAINTAINER:=mnixry
-PKG_LICENSE:=AGPL-3.0
+PKG_MAINTAINER:=tqdm
+PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
@@ -27,13 +27,13 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/mnixry/nonebot-plugin-gocqhttp
-	DEPENDS:=+python3-chevron +python3-httpx +python3-nonebot-adapter-onebot \
-	  +python3-nonebot2 +python3-psutil +python3-py-cpuinfo
+  URL:=https://github.com/tqdm/tqdm
+	DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-A plugin to run go-cqhttp directly in NoneBot2, without additional download and installation.
+tqdm derives from the Arabic word taqaddum (تقدّم) which can mean “progress,”
+and is an abbreviation for “I love you so much” in Spanish (te quiero demasiado).
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

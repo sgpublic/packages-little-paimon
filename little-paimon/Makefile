@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=little-paimon
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=CMHopeSunshine
@@ -21,7 +21,7 @@ define Package/$(PKG_NAME)
   TITLE:=little-paimon
   URL:=https://github.com/CMHopeSunshine/LittlePaimon
 	DEPENDS:=+python3-nb-cli +go-cqhttp +git-http +ffmpeg \
-	  +python3-nonebot-plugin-gocqhttp
+	  +python3-littlepaimon-utils +python3-nonebot-adapter-onebot
 endef
 
 define Package/$(PKG_NAME)/description
@@ -38,10 +38,10 @@ define Package/$(PKG_NAME)/install
 	$(CP) ./root/etc/nginx/* $(1)/etc/nginx
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/zzz-little-paimon $(1)/etc/uci-defaults/99-little-paimon
-	rm -rf $(1)/etc/nb-cli/LittlePaimon
-	git clone https://github.com/CMHopeSunshine/LittlePaimon.git $(1)/etc/nb-cli/LittlePaimon
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./root/etc/init.d/* $(1)/etc/init.d
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) ./root/usr/bin/* $(1)/usr/bin
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

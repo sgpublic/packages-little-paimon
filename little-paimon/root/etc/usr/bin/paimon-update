@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "stoping little-paimon"
+/etc/init.d/little-paimon stop
+cd /etc/little-paimon/
+if [ -d ./LittlePaimon/.git ]; then
+  echo "start updating little-paimon"
+  cd LittlePaimon
+  git pull
+else
+  echo "start installing little-paimon"
+  git clone https://github.com/CMHopeSunshine/LittlePaimon
+fi
+echo "update success!"
