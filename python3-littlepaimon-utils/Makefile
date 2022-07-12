@@ -28,7 +28,7 @@ define Package/python3-$(PKG_NAME)
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
   URL:=https://pypi.org/project/littlepaimon-utils
-	DEPENDS:=+python3 +python3-httpx +python3-pillow
+	DEPENDS:=+python3 +python3-httpx +python3-pillow +python3-tqdm
 endef
 
 define Package/python3-$(PKG_NAME)/description
