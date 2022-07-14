@@ -4,3 +4,11 @@
 
 如果您 fork 了本 repo，**请一定不要随意升级依赖版本！**
 
+## Package 添加方法
+
+使用模板 [P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt) 创建云编译仓库，在 `diy-part1.sh` 中添加：
+
+```shell
+git clone https://github.com/sgpublic/packages-little-paimon.git package/little-paimon
+```
+
