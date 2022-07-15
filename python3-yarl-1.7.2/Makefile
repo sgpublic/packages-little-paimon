@@ -7,15 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=uvicorn
-PKG_VERSION:=0.17.6
+PKG_NAME_BASE:=yarl
+PKG_VERSION:=1.7.2
+PKG_NAME:=$(PKG_NAME_BASE)-$(PKG_VERSION)
 PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=5180f9d059611747d841a4a4c4ab675edf54c8489e97f96d0583ee90ac3bfc23
+PYPI_NAME:=$(PKG_NAME_BASE)
+PKG_HASH:=45399b46d60c253327a460e99856752009fcee5f5d3c80b2f7c0cae1c38d56dd
 
-PKG_MAINTAINER:=encode
-PKG_LICENSE:=BSD-3-Clause
+PKG_MAINTAINER:=tartley
+PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
@@ -26,13 +27,13 @@ define Package/python3-$(PKG_NAME)
   SECTION:=lang
   CATEGORY:=Languages
   SUBMENU:=Python
-  TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/encode/uvicorn
-	DEPENDS:=+python3 +python3-asgiref +python3-click +python3-h11 +python3-uvloop
+  TITLE:=Yet another URL library
+  URL:=https://github.com/aio-libs/yarl
+  DEPENDS:=+python3 +python3-multidict +python3-idna
 endef
 
 define Package/python3-$(PKG_NAME)/description
-Uvicorn is an ASGI web server implementation for Python.
+Yet another URL library
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

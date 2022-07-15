@@ -30,7 +30,7 @@ define Package/python3-$(PKG_NAME)
   URL:=https://github.com/nonebot/nb-cli
 	DEPENDS:=+python3-click +python3-colorama-0.4.5 +python3-cookiecutter \
 	  +python3-httpx +python3-nonebot2 +python3-prompt-toolkit +python3-tomlkit \
-		+python3-wcwidth
+		+python3-wcwidth +python3-pyfiglet
 endef
 
 define Package/python3-$(PKG_NAME)/description

@@ -7,15 +7,16 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=uvicorn
-PKG_VERSION:=0.17.6
+PKG_NAME_BASE:=colorama
+PKG_VERSION:=0.4.5
+PKG_NAME:=$(PKG_NAME_BASE)-$(PKG_VERSION)
 PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=5180f9d059611747d841a4a4c4ab675edf54c8489e97f96d0583ee90ac3bfc23
+PYPI_NAME:=$(PKG_NAME_BASE)
+PKG_HASH:=e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4
 
-PKG_MAINTAINER:=encode
-PKG_LICENSE:=BSD-3-Clause
+PKG_MAINTAINER:=tartley
+PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
@@ -27,12 +28,13 @@ define Package/python3-$(PKG_NAME)
   CATEGORY:=Languages
   SUBMENU:=Python
   TITLE:=python3-$(PKG_NAME)
-  URL:=https://github.com/encode/uvicorn
-	DEPENDS:=+python3 +python3-asgiref +python3-click +python3-h11 +python3-uvloop
+  URL:=https://github.com/tartley/colorama
+  DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-Uvicorn is an ASGI web server implementation for Python.
+Makes ANSI escape character sequences
+(for producing colored terminal text and cursor positioning) work under MS Windows.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

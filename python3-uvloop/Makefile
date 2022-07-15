@@ -7,34 +7,33 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME_BASE:=colorama
-PKG_NAME:=$(PKG_NAME_BASE)-0.4.5
-PKG_VERSION:=0.4.5
+PKG_NAME:=uvloop
+PKG_VERSION:=0.16.0
 PKG_RELEASE:=1
 
-PYPI_NAME:=$(PKG_NAME_BASE)
-PKG_HASH:=e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4
+PYPI_NAME:=$(PKG_NAME)
+PKG_HASH:=f74bc20c7b67d1c27c72601c78cf95be99d5c2cdd4514502b4f3eb0933ff1228
 
-PKG_MAINTAINER:=tartley
+PKG_MAINTAINER:=MagicStack
 PKG_LICENSE:=Apache-2.0
-PKG_LICENSE_FILES:=LICENSE
+PKG_LICENSE_FILES:=LICENSE-APACHE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-$(PKG_NAME)
-  SECTION:=lang
+  SECTION:=MagicStack
   CATEGORY:=Languages
   SUBMENU:=Python
-  TITLE:=python3-$(PKG_NAME_BASE)-0.4.5
-  URL:=https://github.com/tartley/colorama
-  DEPENDS:=+python3
+  TITLE:=python3-$(PKG_NAME)
+  URL:=https://github.com/MagicStack/uvloop
+	DEPENDS:=+python3
 endef
 
 define Package/python3-$(PKG_NAME)/description
-Makes ANSI escape character sequences
-(for producing colored terminal text and cursor positioning) work under MS Windows.
+uvloop is a fast, drop-in replacement of the built-in asyncio event loop.
+uvloop is implemented in Cython and uses libuv under the hood.
 endef
 
 $(eval $(call Py3Package,python3-$(PKG_NAME)))

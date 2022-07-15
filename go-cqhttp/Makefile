@@ -49,6 +49,7 @@ define Package/go-cqhttp/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./root/etc/init.d/* $(1)/etc/init.d
 	$(CP) ./root/etc/cqhttp.yml $(1)/etc/cqhttp.yml
+	$(INSTALL_DIR) $(1)/etc/cqhttp.d
 endef
 
 $(eval $(call BuildPackage,go-cqhttp))

@@ -30,7 +30,7 @@ define Package/python3-$(PKG_NAME)
   URL:=https://github.com/nonebot/nonebot2
 	DEPENDS:=+python3 +python3-fastapi +python3-loguru +python3-pydantic \
 	  +python3-pygtrie +python3-tomlkit +python3-typing-extensions \
-		+python3-uvicorn +python3-yarl
+		+python3-uvicorn +python3-yarl-1.7.2
 endef
 
 define Package/python3-$(PKG_NAME)/description

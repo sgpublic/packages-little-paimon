@@ -1,0 +1,11 @@
+--- a/setup.py
++++ b/setup.py
+@@ -216,6 +216,8 @@ class uvloop_build_ext(build_ext):
+
+         if 'LIBUV_CONFIGURE_HOST' in env:
+             cmd = ['./configure', '--host=' + env['LIBUV_CONFIGURE_HOST']]
++        elif '_PYTHON_HOST_PLATFORM' in env:
++            cmd = ['./configure', '--host=' + env['_PYTHON_HOST_PLATFORM'].split('-')[1]]
+         else:
+             cmd = ['./configure']
+         subprocess.run(
